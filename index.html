@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <link href="/static/styles.css" rel="stylesheet">
-    <head>
-        <title>ValleyGuard - Map interface and form submission</title>
-        <link rel="icon" href="logo.png" type="image/png">
-        <meta name="viewport" content="initial-scale=1, width=device-width">
-        <link href="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.css" rel="stylesheet" />
+  <link href="static/styles.css" rel="stylesheet" />
+  <head>
+    <title>ValleyGuard - Map interface and form submission</title>
+    <link rel="icon" href="logo.png" type="image/png" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link
+      href="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
 
-        <style>
-        body { margin: 0; }
-        #map { height: 100vh; }
-        </style>
-    </head>
+    <style>
+      body {
+        margin: 0;
+      }
+      #map {
+        height: 100vh;
+      }
+    </style>
+  </head>
 
-    <div class="header">
-        <h1>ValleyGuard</h1>
-        <p>Share, Protect, Connect</p>
-    </div>
+  <div class="header">
+    <h1>ValleyGuard</h1>
+    <p>Share, Protect, Connect</p>
+  </div>
 
-    <div class="navbar">
-        <a href="index.html">MAP</a>
-        <a href="live.html">REPORT INCIDENT</a>
-        <a href="reports.html">SUBMISSIONS</a>
-        
-        <b>
-            <img src="logo.png" alt="Logo">
-        </b>
-        
-    </div>
+  <div class="navbar">
+    <a href="index.html">MAP</a>
+    <a href="live.html">REPORT INCIDENT</a>
+    <a href="reports.html">SUBMISSIONS</a>
 
-    <body>
+    <b>
+      <img src="logo.png" alt="Logo" />
+    </b>
+  </div>
 
+  <body>
     <div id="map"></div>
     <script src="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.js"></script>
-    <script src = "script.js"></script>
+    <script src="script.js"></script>
     <script>
       const apiKey = process.env.API_KEY;
       const mapName = "MyMap1";
       const region = "us-east-2";
 
       const map = new maplibregl.Map({
-            container: "map",
-            style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
-            center: [-75.480858, 40.632950],
-            zoom: 11,
-        });
-        map.addControl(new maplibregl.NavigationControl(), "top-left");
+        container: "map",
+        style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
+        center: [-75.480858, 40.63295],
+        zoom: 11,
+      });
+      map.addControl(new maplibregl.NavigationControl(), "top-left");
 
-        // send request to database --> print out markers on map
-        fetch("https://qac92d55ac.execute-api.us-east-2.amazonaws.com/dev")
-        .then(response => {
-            // Check if the request was successful (status code 2xx)
-            if (!response.ok) {
+      // send request to database --> print out markers on map
+      fetch("https://qac92d55ac.execute-api.us-east-2.amazonaws.com/dev")
+        .then((response) => {
+          // Check if the request was successful (status code 2xx)
+          if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            // Parse the JSON in the response
-            return response.json();
+          }
+          // Parse the JSON in the response
+          return response.json();
         })
-        .then(data => {
-            // Process the data obtained from the API
-                for (var item of data){
-                    const markerCoordinates = [item['long'], item['lat']]
+        .then((data) => {
+          // Process the data obtained from the API
+          for (var item of data) {
+            const markerCoordinates = [item["long"], item["lat"]];
 
-                    const marker = new maplibregl.Marker()
-                        .setLngLat(markerCoordinates)
-                        .addTo(map);
+            const marker = new maplibregl.Marker()
+              .setLngLat(markerCoordinates)
+              .addTo(map);
 
-                    const popup = new maplibregl.Popup({ offset: 25 })
-                        .setLngLat(markerCoordinates)
-                        .setHTML(`<h6>${item['address']}</h6><p>${item['comment']}</p>`);
-                    marker.setPopup(popup);
-                    popup.addTo(map);
-                }
+            const popup = new maplibregl.Popup({ offset: 25 })
+              .setLngLat(markerCoordinates)
+              .setHTML(`<h6>${item["address"]}</h6><p>${item["comment"]}</p>`);
+            marker.setPopup(popup);
+            popup.addTo(map);
+          }
         })
-        .catch(error => {
-            // Handle errors during the fetch
-            console.error('Fetch error:', error);
+        .catch((error) => {
+          // Handle errors during the fetch
+          console.error("Fetch error:", error);
         });
     </script>
-
-    </body>
+  </body>
 </html>
