@@ -10,7 +10,7 @@ ValleyGuard is a community-driven web application designed to report and visuali
 ValleyGuard allows users to **submit incident reports** and **view active reports on a live map**.  
 Each report is stored and retrieved from a DynamoDB database using AWS Lambda and API Gateway.
 
-> **Note:** The original version of ValleyGuard was developed during the Leh-Laf.  
+> **Note:** The original version of ValleyGuard was developed during the Leh-Laf hackathon.  
 > You can view that original codebase here: [dpm227/communitymapp](https://github.com/dpm227/communitymapp)  
 > The current repository reflects significant updates and a complete React-based rework.
 
