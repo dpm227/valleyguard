@@ -2,6 +2,16 @@
 
 ValleyGuard is a community-driven web application designed to report and visualize local environmental or safety incidents in real time. The platform leverages **AWS cloud services** for scalable, serverless data management and integrates an interactive **React** frontend for a seamless user experience.
 
+## 🎥 Demo
+
+Explore the live demo here:  
+👉 **[https://dpm227.github.io/valleyguard](https://dpm227.github.io/valleyguard)**  
+
+### What You Can Try
+1. **View the live map** — See existing environmental or safety reports plotted in real time.  
+2. **Submit a new report** — Fill out the form with details such as location and incident type.  
+3. **Navigate between pages** — Switch between *Home*, *Report*, and *Submissions* using the React Router.  
+
 
 ---
 
@@ -20,18 +30,6 @@ Each report is stored and retrieved from a DynamoDB database using AWS Lambda an
 - 📝 **Incident Form:** Submit new incidents directly through the web interface.  
 - ☁️ **Serverless Architecture:** Powered by AWS Lambda and API Gateway for efficient, scalable backend operations.  
 - ⚛️ **React Frontend:** Modernized UI rebuilt using React for speed, modularity, and responsiveness.  
-
----
-
-## 🎥 Demo
-
-Explore the live demo here:  
-👉 **[https://dpm227.github.io/valleyguard](https://dpm227.github.io/valleyguard)**  
-
-### What You Can Try
-1. **View the live map** — See existing environmental or safety reports plotted in real time.  
-2. **Submit a new report** — Fill out the form with details such as location and incident type.  
-3. **Navigate between pages** — Switch between *Home*, *Report*, and *Submissions* using the React Router.  
 
 ---
 
