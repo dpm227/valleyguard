@@ -12,7 +12,7 @@ export default function Home() {
   const STYLE = "Standard";
   const REGION = "us-east-2";
   const CENTER = [-75.3772, 40.6054];
-  const ZOOM = 12;
+  const ZOOM = 14;
 
   useEffect(() => {
     if (mapInstance.current) return; // prevent double init in strict mode
