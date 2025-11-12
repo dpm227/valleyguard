@@ -1,38 +1,56 @@
-## ValleyGuard
+# 🛰️ ValleyGuard
 
-website hosted on AWS Amplify (no longer active): [https://dev7432.d2ir80xfdjaxsq.amplifyapp.com/index.html](https://dev7432.d2ir80xfdjaxsq.amplifyapp.com/index.html)
-
-communitymapp is the name of our repo for the ValleyGuard web application using AWS. 
-
-# Description
-
-The application uses AWS Location Services to display and output locations of reported incidents. Incidents can be filed on the FORM page of the website.
-
-## Dependencies
-
-We are using Serverless Lambda Functions via API Gateways to access and 
-get/post data to a small DynamoDB database. The code for the AWS services 
-can be found in the Lambda Functions folder.
-
-All of our code is written in plain and native js, css, python, and html. Our project utilizes
-Amazon Web Services such as Amplify, Lambda, DynamoDB, and API Gateway.
+ValleyGuard is a community-driven web application designed to report and visualize local environmental or safety incidents in real time. The platform leverages **AWS cloud services** for scalable, serverless data management and integrates an interactive **React** frontend for a seamless user experience.
 
 
-## Team
+---
 
-@Jickey0
-@dpm227
-@averync2005
-@jimothych
+## 🌍 Overview
 
-## Acknowledgements
+ValleyGuard allows users to **submit incident reports** and **view active reports on a live map**.  
+Each report is stored and retrieved from a DynamoDB database using AWS Lambda and API Gateway.
 
-Massive thanks to the Tiny Technical Tutorials channel on Youtube for 
-single-handedly teaching us AWS services in less than an hour.
+### Key Features
+- 🧭 **Interactive Map:** Displays incident locations using AWS Location Services.  
+- 📝 **Incident Form:** Submit new incidents directly through the web interface.  
+- ☁️ **Serverless Architecture:** Powered by AWS Lambda and API Gateway for efficient, scalable backend operations.  
+- ⚛️ **React Frontend:** Modernized UI rebuilt using React for speed, modularity, and responsiveness.  
 
-## Contributing
+---
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+## 🧰 Tech Stack
 
-Please make sure to update tests as appropriate.
+### **Frontend**
+- React (UI framework)
+- Tailwind CSS / native CSS styling  
+- AWS Location Services for map display  
+
+### **Backend**
+- **AWS Lambda** — Serverless compute for handling incident creation and retrieval  
+- **Amazon DynamoDB** — NoSQL database for storing reports  
+- **Amazon API Gateway** — Connects frontend requests to Lambda functions  
+
+---
+
+## 👥 Team
+
+- [@Jickey0](https://github.com/Jickey0)  
+- [@dpm227](https://github.com/dpm227)  
+- [@averync2005](https://github.com/averync2005)  
+- [@jimothych](https://github.com/jimothych)
+
+---
+
+## 🙏 Acknowledgements
+
+Massive thanks to **Tiny Technical Tutorials** on YouTube for providing clear, concise AWS tutorials that made serverless integration possible.
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!  
+For major changes, please open an issue first to discuss proposed updates.
+
+> Make sure to include tests where applicable and follow established project conventions.
+
