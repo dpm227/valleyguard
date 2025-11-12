@@ -23,6 +23,18 @@ Each report is stored and retrieved from a DynamoDB database using AWS Lambda an
 
 ---
 
+## 🎥 Demo
+
+Explore the live demo here:  
+👉 **[https://dpm227.github.io/valleyguard](https://dpm227.github.io/valleyguard)**  
+
+### What You Can Try
+1. **View the live map** — See existing environmental or safety reports plotted in real time.  
+2. **Submit a new report** — Fill out the form with details such as location and incident type.  
+3. **Navigate between pages** — Switch between *Home*, *Report*, and *Submissions* using the React Router.  
+
+---
+
 ## 🧰 Tech Stack
 
 ### **Frontend**
