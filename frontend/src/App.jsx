@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/valleyguard">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/report" element={<Report />} />

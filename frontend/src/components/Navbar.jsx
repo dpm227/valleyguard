@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "../lib/utils";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -43,13 +44,13 @@ export const Navbar = () => {
         {/* desktop nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
-            <a
+            <Link
               key={key}
               href={item.href}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         {/*mobile nav */}
