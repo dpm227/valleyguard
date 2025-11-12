@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/valleyguard/",
+  base: "/valleyguard",
   plugins: [react(), tailwindcss()],
   resolve: {
     // make sure only ONE copy of these is used at runtime
