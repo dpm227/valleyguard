@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "../lib/utils";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Report", href: "/report" },
-  { name: "Submissions", href: "/submissions" },
+  { name: "Home", to: "/" },
+  { name: "Report", to: "/report" },
+  { name: "Submissions", to: "/submissions" },
 ];
 
 export const Navbar = () => {
@@ -32,25 +32,25 @@ export const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-        <a
+        <NavLink
           className="text-xl font-bold text-primary flex items-center"
           href="/"
         >
           <span className="relative z-10">
             <span className="text-foreground"> Valley</span>Guard
           </span>
-        </a>
+        </NavLink>
 
         {/* desktop nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
-            <Link
+            <NavLink
               key={key}
-              href={item.href}
+              to={item.to}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
-            </Link>
+            </NavLink>
           ))}
         </div>
         {/*mobile nav */}
@@ -74,14 +74,14 @@ export const Navbar = () => {
         >
           <div className="flex flex-col space-y-8 text-xl">
             {navItems.map((item, key) => (
-              <a
+              <NavLink
                 key={key}
-                href={item.href}
+                to={item.to}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </NavLink>
             ))}
           </div>
         </div>
